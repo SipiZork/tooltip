@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import '../css/ToolTip.css';
 
 
   let divStyle = {
@@ -116,11 +115,9 @@ class ToolTip extends Component {
 
   render() {
     return (
-      <Fragment>
         <div className={this.state.classes} style={divStyle}>{this.props.tip}
           <div className="shaft" style={shaftStyle}></div>
         </div>
-      </Fragment>
     )
   }
 }
