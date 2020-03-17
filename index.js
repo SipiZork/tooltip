@@ -21,9 +21,12 @@ class ToolTip extends Component {
       color: "white",
       bgColor: "black"
     }
+
+    this.position = this.position.bind(this);
+    this.show = this.show.bind(this);
   }
 
-  position = () => {
+  position() {
     const tooltipWidth = ReactDOM.findDOMNode(this).clientWidth;
     const tooltipHeight= ReactDOM.findDOMNode(this).clientHeight;
     const parentWidth = ReactDOM.findDOMNode(this).parentNode.clientWidth;
@@ -85,7 +88,7 @@ class ToolTip extends Component {
     }
   }
 
-  show = () => {
+  show() {
     this.setState({ show: !this.state.show }, () => {
       if(this.state.show === true) {
         this.setState({ classes: `tooltip ${this.state.position} show`});
